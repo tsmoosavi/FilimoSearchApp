@@ -5,8 +5,8 @@ import retrofit2.http.GET
 import retrofit2.http.Path
 
 interface ApiService {
-    @GET("products/{id}")
-    suspend fun getProduct(
+    @GET("text/{Query}/sug/on")
+    suspend fun getMovieList(
         @Path("Query") searchWord: String,
     ):List<Data>
 }

@@ -7,6 +7,7 @@ import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.components.SingletonComponent
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -14,7 +15,7 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
 
-@InstallIn
+@InstallIn(SingletonComponent::class)
 @Module
 object AppModule {
 
@@ -44,7 +45,7 @@ object AppModule {
     fun getRetrofit(moshi: Moshi, client: OkHttpClient): Retrofit {
         val retrofit = Retrofit.Builder()
             .addConverterFactory(MoshiConverterFactory.create(moshi))
-            .baseUrl("https://www.filimo.com/api/en/v1/movie/movie/list/tagid/1000300/text/{Query}/sug/on")
+            .baseUrl("https://www.filimo.com/api/en/v1/movie/movie/list/tagid/1000300/")
             .client(client)
             .build()
         return retrofit
