@@ -8,10 +8,9 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.filimosearchapp.R
 import com.example.filimosearchapp.databinding.FragmentMovieListBinding
+import dagger.hilt.android.AndroidEntryPoint
 
-/**
- * A simple [Fragment] subclass as the second destination in the navigation.
- */
+@AndroidEntryPoint
 class MovieListFragment : Fragment() {
 
     private var _binding: FragmentMovieListBinding? = null
