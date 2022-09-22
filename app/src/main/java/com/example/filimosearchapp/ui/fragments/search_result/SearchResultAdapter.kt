@@ -29,14 +29,14 @@ class SearchResultAdapter() :
     }
 
     override fun onBindViewHolder(holder: ItemHolder, position: Int) {
-//        var image = getItem(position).pic.
-//        val imageUrl = getItem(position).src
-//        if (!imageUrl.isNullOrEmpty()) {
-//            Glide.with(holder.binding.ivImage)
-//                .load(imageUrl)
-//                .placeholder(R.drawable.ic_baseline_center_focus_strong_24)
-//                .into(holder.binding.ivImage)
-//        }
+
+        val imageUrl = getItem(position).pic.movieImgM
+        if (!imageUrl.isNullOrEmpty()) {
+            Glide.with(holder.binding.poster)
+                .load(imageUrl)
+                .placeholder(R.drawable.loading)
+                .into(holder.binding.poster)
+        }
 
 
     }
