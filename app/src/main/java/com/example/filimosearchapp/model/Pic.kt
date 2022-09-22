@@ -7,7 +7,7 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class Pic(
     @Json(name = "movie_img_b")
-    val movieImgB: String,
+    val movieImgB: String,//شاید اینا
     @Json(name = "movie_img_m")
     val movieImgM: String,
     @Json(name = "movie_img_s")

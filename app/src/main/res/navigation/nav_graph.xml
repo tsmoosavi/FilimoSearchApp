@@ -17,7 +17,7 @@
     </fragment>
     <fragment
         android:id="@+id/MovieSearchResultListFragment"
-        android:name="com.example.filimosearchapp.ui.fragments.MovieSearchResultListFragment"
+        android:name="com.example.filimosearchapp.ui.fragments.search_result.MovieSearchResultListFragment"
         android:label="@string/movie_search_result_list_fragment_label"
         tools:layout="@layout/fragment_movie_search_result_list"/>
 </navigation>

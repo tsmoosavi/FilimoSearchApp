@@ -1,4 +1,4 @@
-package com.example.filimosearchapp.ui.fragments
+package com.example.filimosearchapp.ui.fragments.search_result
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

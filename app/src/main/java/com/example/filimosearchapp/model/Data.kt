@@ -35,7 +35,7 @@ data class Data(
     @Json(name = "HD")
     val hD: Boolean,
     @Json(name = "imdb_rate")
-    val imdbRate: String,
+    val imdbRate: String, //این خوبه
     @Json(name = "language_info")
     val languageInfo: LanguageInfo,
     @Json(name = "last_watch")
@@ -47,9 +47,9 @@ data class Data(
     @Json(name = "movie_id")
     val movieId: String,
     @Json(name = "movie_title")
-    val movieTitle: String,
+    val movieTitle: String, //این خوبه
     @Json(name = "movie_title_en")
-    val movieTitleEn: String,
+    val movieTitleEn: String,//این خوبه شاید
     @Json(name = "output_type")
     val outputType: String,
     @Json(name = "pic")
@@ -61,7 +61,7 @@ data class Data(
     @Json(name = "publish_date")
     val publishDate: String,
     @Json(name = "rate_avrage")
-    val rateAvrage: String,
+    val rateAvrage: String,//این خوبه
     @Json(name = "rate_enable")
     val rateEnable: Boolean,
     @Json(name = "rel_data")

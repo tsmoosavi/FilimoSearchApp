@@ -1,4 +1,4 @@
-package com.example.filimosearchapp.ui.fragments
+package com.example.filimosearchapp.ui.fragments.search_result
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
