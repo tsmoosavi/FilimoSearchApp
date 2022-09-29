@@ -1,7 +1,5 @@
 package com.example.filimosearchapp.data
 
-import com.example.filimosearchapp.model.Attributes
-import com.example.filimosearchapp.model.Data
 import com.example.filimosearchapp.model.Movie
 import retrofit2.http.GET
 import retrofit2.http.Path

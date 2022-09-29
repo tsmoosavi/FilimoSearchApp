@@ -29,15 +29,13 @@ class SearchResultAdapter() :
 
     override fun onBindViewHolder(holder: ItemHolder, position: Int) {
         holder.binding.movieName.text = getItem(position).movieTitle
-        val imageUrl = getItem(position).pic.movieImgS
+        val imageUrl = getItem(position).pic.movieImgM
         if (!imageUrl.isNullOrEmpty()) {
             Glide.with(holder.binding.poster)
                 .load(imageUrl)
                 .placeholder(R.drawable.loading)
                 .into(holder.binding.poster)
         }
-
-
     }
 }
 
