@@ -10,14 +10,17 @@
         android:name="com.example.filimosearchapp.ui.fragments.home.HomeFragment"
         android:label="@string/home_fragment_label"
         tools:layout="@layout/fragment_home">
-
         <action
-            android:id="@+id/action_FirstFragment_to_SecondFragment"
+            android:id="@+id/action_HomeFragment_to_MovieSearchResultListFragment"
             app:destination="@id/MovieSearchResultListFragment" />
     </fragment>
     <fragment
         android:id="@+id/MovieSearchResultListFragment"
         android:name="com.example.filimosearchapp.ui.fragments.search_result.MovieSearchResultListFragment"
         android:label="@string/movie_search_result_list_fragment_label"
-        tools:layout="@layout/fragment_movie_search_result_list"/>
+        tools:layout="@layout/fragment_movie_search_result_list">
+        <argument
+            android:name="searchWord"
+            app:argType="string" />
+    </fragment>
 </navigation>

@@ -1,6 +1,5 @@
 package com.example.filimosearchapp.ui.fragments.search_result
 
-import android.media.Image
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
@@ -29,8 +28,8 @@ class SearchResultAdapter() :
     }
 
     override fun onBindViewHolder(holder: ItemHolder, position: Int) {
-
-        val imageUrl = getItem(position).pic.movieImgM
+        holder.binding.movieName.text = getItem(position).movieTitle
+        val imageUrl = getItem(position).pic.movieImgS
         if (!imageUrl.isNullOrEmpty()) {
             Glide.with(holder.binding.poster)
                 .load(imageUrl)
@@ -49,6 +48,6 @@ object MovieDiffCallback : DiffUtil.ItemCallback<Data>() {
     }
 
     override fun areContentsTheSame(oldItem: Data, newItem: Data): Boolean {
-        return oldItem.movieId == newItem.movieId
+        return oldItem.movieTitle == newItem.movieTitle
     }
 }

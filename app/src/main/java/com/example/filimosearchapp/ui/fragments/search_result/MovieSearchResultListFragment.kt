@@ -1,12 +1,12 @@
 package com.example.filimosearchapp.ui.fragments.search_result
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.fragment.findNavController
-import com.example.filimosearchapp.R
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.navArgs
 import com.example.filimosearchapp.databinding.FragmentMovieSearchResultListBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -14,9 +14,8 @@ import dagger.hilt.android.AndroidEntryPoint
 class MovieSearchResultListFragment : Fragment() {
 
     private var _binding: FragmentMovieSearchResultListBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
+    private val args: MovieSearchResultListFragmentArgs by navArgs()
+    private val vm: SearchResultViewModel by viewModels()
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -32,6 +31,12 @@ class MovieSearchResultListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         activity?.title = "results"
+        val adapter = SearchResultAdapter()
+        binding.movieRecycler.adapter = adapter
+        vm.getMovieList(args.searchWord)
+        vm.movieList.observe(viewLifecycleOwner){
+            adapter.submitList(it)
+        }
     }
 
     override fun onDestroyView() {

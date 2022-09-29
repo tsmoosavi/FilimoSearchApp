@@ -30,8 +30,13 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         activity?.title = "Home"
-        binding.buttonFirst.setOnClickListener {
-            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
+        binding.searchButton.setOnClickListener {
+            var action = HomeFragmentDirections.actionHomeFragmentToMovieSearchResultListFragment(binding.searchBox.text.toString())
+            if(action!= null){
+                findNavController().navigate(action)
+            }else{
+                binding.searchBox.error = "Enter at least one word"
+            }
         }
     }
 
